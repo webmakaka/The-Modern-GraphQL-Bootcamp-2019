@@ -1,10 +1,19 @@
 # [Udemy, Andrew Mead] The Modern GraphQL Bootcamp (Advanced Node.js) [2019, ENG]
 
+# GraphQL Basics
 
+<br/>
 
-### [GraphQL Basics](./01-graphql-basics/Readme.md)
+## 2. GraphQL Basics Schemas and Queries
 
+<br/>
 
+### 5. Setting up Babel
+
+    $ npm init -y
+    $ npm install --save babel-cli babel-preset-env
+
+<br/>
 
 ---
 
