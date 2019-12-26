@@ -2,7 +2,7 @@
 
 
 
-### [GraphQL Basics](./01-graphql-basics/Readme.md)
+### [GraphQL Basics](./01-graphql-basics/README.md)
 
 
 
