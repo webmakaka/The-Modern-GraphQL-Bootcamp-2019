@@ -61,7 +61,6 @@ $ curl \
 
 <br/>
 
-
 **request:**
 
 ```
@@ -85,6 +84,51 @@ $ curl \
         "gpa": 3.1,
         "id": "abc123",
         "name": "Andrew"
+    }
+}
+
+```
+
+<br/>
+
+### 9. Live Reload for GraphQL-Yoga
+
+<br/>
+
+### 10. Creating Custom Types
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ me {id, name, email, age}, post {id, title, body, published}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "me": {
+            "age": 28,
+            "email": "mike@example.com",
+            "id": "123098",
+            "name": "Mike"
+        },
+        "post": {
+            "body": "",
+            "id": "092",
+            "published": false,
+            "title": "GraphQL 101"
+        }
     }
 }
 

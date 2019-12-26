@@ -4,31 +4,43 @@ import { GraphQLServer } from 'graphql-yoga';
 
 const typeDefs = `
   type Query {
+    me: User!,
+    post: Post!
+  }
+
+  type User {
     id: ID!,
     name: String!,
-    age: Int!,
-    employed: Boolean!,
-    gpa: Float
+    email: String!,
+    age: Int
+  }
+
+  type Post {
+    id: ID!,
+    title: String!,
+    body: String!,
+    published: Boolean!
   }
 `;
 
 // Resolvers
 const resolvers = {
   Query: {
-    id() {
-      return 'abc123';
+    me() {
+      return {
+        id: '123098',
+        name: 'Mike',
+        email: 'mike@example.com',
+        age: 28
+      };
     },
-    name() {
-      return 'Andrew';
-    },
-    age() {
-      return 27;
-    },
-    employed() {
-      return true;
-    },
-    gpa() {
-      return 3.1;
+    post() {
+      return {
+        id: '092',
+        title: 'GraphQL 101',
+        body: '',
+        published: false
+      };
     }
   }
 };
