@@ -26,7 +26,6 @@
 
 <br/>
 
-
 **request:**
 
 ```
@@ -38,6 +37,8 @@ $ curl \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
+
+<br/>
 
 **resonse:**
 
@@ -53,6 +54,42 @@ $ curl \
 
 
 ```
+
+<br/>
+
+### 8. GraphQL Scalar Types
+
+<br/>
+
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ id, name, age, employed, gpa }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "age": 27,
+        "employed": true,
+        "gpa": 3.1,
+        "id": "abc123",
+        "name": "Andrew"
+    }
+}
+
+```
+
 
 ---
 
