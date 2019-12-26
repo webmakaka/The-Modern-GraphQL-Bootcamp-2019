@@ -134,6 +134,37 @@ $ curl \
 
 ```
 
+<br/>
+
+### 11. Operation Arguments
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ greeting(name: \"Andrew\", position: \"Teacher\"),  add(a: 2, b: 3) }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "add": 5,
+        "greeting": "Hello, Andrew! You are my favorite Teacher!"
+    }
+}
+
+
+```
 
 ---
 
