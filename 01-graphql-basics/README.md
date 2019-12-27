@@ -202,6 +202,189 @@ $ curl \
 
 ```
 
+<br/>
+
+### 13. Working with Arrays Part II
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ users{id, name, email, age} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "users": [
+            {
+                "age": 27,
+                "email": "andrew@example.com",
+                "id": "1",
+                "name": "Andrew"
+            },
+            {
+                "age": null,
+                "email": "sarah@example.com",
+                "id": "2",
+                "name": "Sarah"
+            },
+            {
+                "age": null,
+                "email": "mike@example.com",
+                "id": "3",
+                "name": "Mike"
+            }
+        ]
+    }
+}
+
+
+```
+
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ users(query: \"A\"){id, name, email, age} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "users": [
+            {
+                "age": 27,
+                "email": "andrew@example.com",
+                "id": "1",
+                "name": "Andrew"
+            },
+            {
+                "age": null,
+                "email": "sarah@example.com",
+                "id": "2",
+                "name": "Sarah"
+            }
+        ]
+    }
+}
+
+
+```
+
+<br/>
+
+**request:**
+
+<br/>
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ posts { id, title, body, published} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "posts": [
+            {
+                "body": "This is how to use GraphQL...",
+                "id": "10",
+                "published": true,
+                "title": "GraphQL 101"
+            },
+            {
+                "body": "This is an advanced GraphQL post...",
+                "id": "11",
+                "published": false,
+                "title": "GraphQL 201"
+            },
+            {
+                "body": "",
+                "id": "12",
+                "published": false,
+                "title": "Programming Music"
+            }
+        ]
+    }
+}
+
+```
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ posts(query: \"GraphQL\"){ id, title, body, published} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "posts": [
+            {
+                "body": "This is how to use GraphQL...",
+                "id": "10",
+                "published": true,
+                "title": "GraphQL 101"
+            },
+            {
+                "body": "This is an advanced GraphQL post...",
+                "id": "11",
+                "published": false,
+                "title": "GraphQL 201"
+            }
+        ]
+    }
+}
+
+```
+
 ---
 
 **Marley**
