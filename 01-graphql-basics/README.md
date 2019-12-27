@@ -385,6 +385,68 @@ $ curl \
 
 ```
 
+<br/>
+
+### 14. Relational Data Basics
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ posts{ id, title, body, published, author { id, name }} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "posts": [
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "body": "This is how to use GraphQL...",
+                "id": "10",
+                "published": true,
+                "title": "GraphQL 101"
+            },
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "body": "This is an advanced GraphQL post...",
+                "id": "11",
+                "published": false,
+                "title": "GraphQL 201"
+            },
+            {
+                "author": {
+                    "id": "2",
+                    "name": "Sarah"
+                },
+                "body": "",
+                "id": "12",
+                "published": false,
+                "title": "Programming Music"
+            }
+        ]
+    }
+}
+
+```
+
 ---
 
 **Marley**
