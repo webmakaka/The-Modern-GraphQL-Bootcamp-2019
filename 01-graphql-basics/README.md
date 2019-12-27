@@ -510,6 +510,53 @@ $ curl \
     }
 }
 
+```
+
+<br/>
+
+### 16. Comment Challenge Part I
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ comments { id, text} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "comments": [
+            {
+                "id": "102",
+                "text": "This worked well for me. Thnaks!"
+            },
+            {
+                "id": "103",
+                "text": "Glad you enjoyed it."
+            },
+            {
+                "id": "104",
+                "text": "This did no work!"
+            },
+            {
+                "id": "105",
+                "text": "Nevermind. I got it to work."
+            }
+        ]
+    }
+}
 
 ```
 
