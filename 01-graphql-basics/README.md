@@ -560,6 +560,153 @@ $ curl \
 
 ```
 
+<br/>
+
+### 17. Comment Challenge Part II
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ comments { id, text, author {id, name} } }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "comments": [
+            {
+                "author": {
+                    "id": "3",
+                    "name": "Mike"
+                },
+                "id": "102",
+                "text": "This worked well for me. Thnaks!"
+            },
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "id": "103",
+                "text": "Glad you enjoyed it."
+            },
+            {
+                "author": {
+                    "id": "2",
+                    "name": "Sarah"
+                },
+                "id": "104",
+                "text": "This did no work!"
+            },
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "id": "105",
+                "text": "Nevermind. I got it to work."
+            }
+        ]
+    }
+}
+
+```
+
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ users{ id, name, email, posts { id, title }, comments { id, text}} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "users": [
+            {
+                "comments": [
+                    {
+                        "id": "103",
+                        "text": "Glad you enjoyed it."
+                    },
+                    {
+                        "id": "105",
+                        "text": "Nevermind. I got it to work."
+                    }
+                ],
+                "email": "andrew@example.com",
+                "id": "1",
+                "name": "Andrew",
+                "posts": [
+                    {
+                        "id": "10",
+                        "title": "GraphQL 101"
+                    },
+                    {
+                        "id": "11",
+                        "title": "GraphQL 201"
+                    }
+                ]
+            },
+            {
+                "comments": [
+                    {
+                        "id": "104",
+                        "text": "This did no work!"
+                    }
+                ],
+                "email": "sarah@example.com",
+                "id": "2",
+                "name": "Sarah",
+                "posts": [
+                    {
+                        "id": "12",
+                        "title": "Programming Music"
+                    }
+                ]
+            },
+            {
+                "comments": [
+                    {
+                        "id": "102",
+                        "text": "This worked well for me. Thnaks!"
+                    }
+                ],
+                "email": "mike@example.com",
+                "id": "3",
+                "name": "Mike",
+                "posts": []
+            }
+        ]
+    }
+}
+
+```
+
 ---
 
 **Marley**
