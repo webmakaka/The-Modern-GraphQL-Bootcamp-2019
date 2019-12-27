@@ -151,6 +151,7 @@ $ curl \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
+
 <br/>
 
 **resonse:**
@@ -162,7 +163,42 @@ $ curl \
         "greeting": "Hello, Andrew! You are my favorite Teacher!"
     }
 }
+```
 
+<br/>
+
+### 12. Working with Arrays Part I
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ add(numbers: [5, 10, 15, 20, 25]), grades }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "add": 75,
+        "grades": [
+            99,
+            80,
+            93
+        ]
+    }
+}
 
 ```
 
