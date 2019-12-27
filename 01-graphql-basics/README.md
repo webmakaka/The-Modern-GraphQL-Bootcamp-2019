@@ -447,6 +447,72 @@ $ curl \
 
 ```
 
+
+<br/>
+
+### 15. Relational Data Arrays
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ users{ id, name, email, posts { id, title }} }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "users": [
+            {
+                "email": "andrew@example.com",
+                "id": "1",
+                "name": "Andrew",
+                "posts": [
+                    {
+                        "id": "10",
+                        "title": "GraphQL 101"
+                    },
+                    {
+                        "id": "11",
+                        "title": "GraphQL 201"
+                    }
+                ]
+            },
+            {
+                "email": "sarah@example.com",
+                "id": "2",
+                "name": "Sarah",
+                "posts": [
+                    {
+                        "id": "12",
+                        "title": "Programming Music"
+                    }
+                ]
+            },
+            {
+                "email": "mike@example.com",
+                "id": "3",
+                "name": "Mike",
+                "posts": []
+            }
+        ]
+    }
+}
+
+
+```
+
 ---
 
 **Marley**
