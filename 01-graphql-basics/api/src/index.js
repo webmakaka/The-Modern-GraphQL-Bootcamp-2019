@@ -48,23 +48,27 @@ const POSTS = [
 const COMMENTS = [
   {
     id: '102',
-    text: 'This worked well for me. Thnaks!',
-    author: '3'
+    text: 'This worked well for me. Thanks!',
+    author: '3',
+    post: '10'
   },
   {
     id: '103',
     text: 'Glad you enjoyed it.',
-    author: '1'
+    author: '1',
+    post: '10'
   },
   {
     id: '104',
     text: 'This did no work!',
-    author: '2'
+    author: '2',
+    post: '11'
   },
   {
     id: '105',
     text: 'Nevermind. I got it to work.',
-    author: '1'
+    author: '1',
+    post: '11'
   }
 ];
 
@@ -93,13 +97,15 @@ const typeDefs = `
     title: String!,
     body: String!,
     published: Boolean!,
-    author: User!
+    author: User!,
+    comments: [Comment!]!
   }
 
   type Comment {
     id: ID!,
     text: String!,
-    author: User!
+    author: User!,
+    post: Post!
   }
 `;
 
@@ -124,11 +130,11 @@ const resolvers = {
           .toLowerCase()
           .includes(args.query.toLowerCase());
 
-        const isBobyMatch = post.body
+        const isBodyMatch = post.body
           .toLowerCase()
           .includes(args.query.toLowerCase());
 
-        return isTitleMatch || isBobyMatch;
+        return isTitleMatch || isBodyMatch;
       });
     },
     comments(parent, args, ctx, info) {
@@ -156,12 +162,22 @@ const resolvers = {
       return USERS.find(user => {
         return user.id === parent.author;
       });
+    },
+    comments(parent, args, ctx, info) {
+      return COMMENTS.filter(comment => {
+        return comment.post === parent.id;
+      });
     }
   },
   Comment: {
     author(parent, args, ctx, info) {
       return USERS.find(user => {
         return user.id === parent.author;
+      });
+    },
+    post(parent, args, ctx, info) {
+      return POSTS.find(post => {
+        return post.id === parent.post;
       });
     }
   },

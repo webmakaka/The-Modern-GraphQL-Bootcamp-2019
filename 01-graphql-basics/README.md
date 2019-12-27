@@ -624,7 +624,6 @@ $ curl \
 
 ```
 
-
 <br/>
 
 **request:**
@@ -707,6 +706,165 @@ $ curl \
 
 ```
 
+
+<br/>
+
+### 18. Comment Challenge Part III
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ comments { id, text, author {id, name}, post {id, title} } }" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "comments": [
+            {
+                "author": {
+                    "id": "3",
+                    "name": "Mike"
+                },
+                "id": "102",
+                "post": {
+                    "id": "10",
+                    "title": "GraphQL 101"
+                },
+                "text": "This worked well for me. Thanks!"
+            },
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "id": "103",
+                "post": {
+                    "id": "10",
+                    "title": "GraphQL 101"
+                },
+                "text": "Glad you enjoyed it."
+            },
+            {
+                "author": {
+                    "id": "2",
+                    "name": "Sarah"
+                },
+                "id": "104",
+                "post": {
+                    "id": "11",
+                    "title": "GraphQL 201"
+                },
+                "text": "This did no work!"
+            },
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "id": "105",
+                "post": {
+                    "id": "11",
+                    "title": "GraphQL 201"
+                },
+                "text": "Nevermind. I got it to work."
+            }
+        ]
+    }
+}
+
+```
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "{ posts{ id, title, body, published, author { id, name }, comments {id, text} }}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "posts": [
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "body": "This is how to use GraphQL...",
+                "comments": [
+                    {
+                        "id": "102",
+                        "text": "This worked well for me. Thanks!"
+                    },
+                    {
+                        "id": "103",
+                        "text": "Glad you enjoyed it."
+                    }
+                ],
+                "id": "10",
+                "published": true,
+                "title": "GraphQL 101"
+            },
+            {
+                "author": {
+                    "id": "1",
+                    "name": "Andrew"
+                },
+                "body": "This is an advanced GraphQL post...",
+                "comments": [
+                    {
+                        "id": "104",
+                        "text": "This did no work!"
+                    },
+                    {
+                        "id": "105",
+                        "text": "Nevermind. I got it to work."
+                    }
+                ],
+                "id": "11",
+                "published": false,
+                "title": "GraphQL 201"
+            },
+            {
+                "author": {
+                    "id": "2",
+                    "name": "Sarah"
+                },
+                "body": "",
+                "comments": [],
+                "id": "12",
+                "published": false,
+                "title": "Programming Music"
+            }
+        ]
+    }
+}
+
+```
 ---
 
 **Marley**
