@@ -910,6 +910,80 @@ $ curl \
 }
 ```
 
+<br/>
+
+### 3. Creating Data with Mutations Part II
+
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {createPost(title: \"My new post\", body: \"\", published: false, author: 1) {id, title, body, published, author {name} }}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "createPost": {
+            "author": {
+                "name": "Andrew"
+            },
+            "body": "",
+            "id": "b6d2ba7a-6e24-4e18-8dbf-b50c8262f4c4",
+            "published": false,
+            "title": "My new post"
+        }
+    }
+}
+
+```
+
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {createComment(text: \"You should check out David Cutter Music\", author: 1, post: 10) {id, text, author {name}, post {title} }}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "createComment": {
+            "author": {
+                "name": "Andrew"
+            },
+            "id": "437e610d-ad0b-41be-a913-bc897aec7f99",
+            "post": {
+                "title": "GraphQL 101"
+            },
+            "text": "You should check out David Cutter Music"
+        }
+    }
+}
+
+
+```
+
 ---
 
 **Marley**
