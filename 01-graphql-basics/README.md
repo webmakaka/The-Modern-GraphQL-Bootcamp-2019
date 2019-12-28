@@ -706,7 +706,6 @@ $ curl \
 
 ```
 
-
 <br/>
 
 ### 18. Comment Challenge Part III
@@ -865,6 +864,52 @@ $ curl \
 }
 
 ```
+
+<br/>
+
+## 3. GraphQL Basics Mutations
+
+<br/>
+
+### 1. Section Intro GraphQL Basics Mutations
+
+<br/>
+
+### 2. Creating Data with Mutations Part I
+
+    $ npm install --save uuid
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {createUser(name:\"Andrew\", email:\"testing@exmple.com\") {id, name, email, age}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**resonse:**
+
+```
+{
+    "data": {
+        "createUser": {
+            "age": null,
+            "email": "testing@exmple.com",
+            "id": "cd6eed60-8dfc-4c9c-9549-f59d685f197a",
+            "name": "Andrew"
+        }
+    }
+}
+```
+
 ---
 
 **Marley**
