@@ -629,6 +629,7 @@ $ curl \
 **request:**
 
 ```
+// GET USERS
 $ curl \
   -d '{ 
     "query": "{ users{ id, name, email, posts { id, title }, comments { id, text}} }" 
@@ -715,6 +716,7 @@ $ curl \
 **request:**
 
 ```
+// GET COMMENTS
 $ curl \
   -d '{ 
     "query": "{ comments { id, text, author {id, name}, post {id, title} } }" 
@@ -791,6 +793,7 @@ $ curl \
 **request:**
 
 ```
+// GET POSTS
 $ curl \
   -d '{ 
     "query": "{ posts{ id, title, body, published, author { id, name }, comments {id, text} }}" 
@@ -950,6 +953,9 @@ $ curl \
 
 ```
 
+<br/>
+
+**request:**
 
 ```
 $ curl \
@@ -990,7 +996,52 @@ $ curl \
 
     $ npm install --save babel-plugin-transform-object-rest-spread
 
-    
+<br/>
+
+### 5. The Input Type
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {createUser(data: {name:\"Andrew\", email:\"testing@exmple.com\"}) {id, name, email, age}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {createPost(data: {title: \"My new post\", body: \"\", published: false, author: 1}) {id, title, body, published, author {name} }}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {createComment(data: {text: \"You should check out David Cutter Music\", author: 1, post: 10}) {id, text, author {name}, post {title} }}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
 
 ---
 
