@@ -984,6 +984,14 @@ $ curl \
 
 ```
 
+<br/>
+
+### 4. The Object Spread Operator with Node.js
+
+    $ npm install --save babel-plugin-transform-object-rest-spread
+
+    
+
 ---
 
 **Marley**
