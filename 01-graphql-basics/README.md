@@ -1190,6 +1190,25 @@ $ curl \
 
 // GET ALL COMMENTS
 
+<br/>
+
+## 4. GraphQL Basics Subscriptions
+
+<br/>
+
+### 2. GraphQL Subscription Basics
+
+<br/>
+
+**request:**
+
+```
+subscription{
+  count
+}
+```
+
+
 ---
 
 **Marley**
