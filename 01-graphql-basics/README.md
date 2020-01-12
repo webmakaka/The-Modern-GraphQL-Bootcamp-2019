@@ -1023,7 +1023,7 @@ $ curl \
 **request:**
 
 ```
-// CREATE POST
+// CREATE POST v2
 $ curl \
   -d '{ 
     "query": "mutation {createPost(data: {title: \"My new post\", body: \"\", published: false, author: 1}) {id, title, body, published, author {name} }}" 
@@ -1225,9 +1225,37 @@ subscription{
 }
 ```
 
-// CREATE COMMENT v2
+<br/>
+
+// CREATE COMMENT v2  
 with post: 10
 
+
+<br/>
+
+### 4. Setting up a Posts Subscription
+
+```
+subscription{
+  post{
+    id,
+    title,
+    body,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+<br/>
+
+
+```
+// CREATE POST v2  
+"published": true
+```
 
 ---
 
