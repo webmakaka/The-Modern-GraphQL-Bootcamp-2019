@@ -1108,11 +1108,13 @@ $ curl \
 
 // GET COMMENTS
 
-
-
 <br/>
 
 ### 8. A Pro GraphQL Project Structure Part I
+
+<br/>
+
+### 9. A Pro GraphQL Project Structure Part II
 
 ---
 
