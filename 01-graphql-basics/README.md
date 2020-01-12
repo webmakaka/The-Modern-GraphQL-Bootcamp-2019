@@ -30,8 +30,8 @@
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ hello, name, location, bio }" 
+  -d '{
+    "query": "{ hello, name, location, bio }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -65,13 +65,14 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ id, name, age, employed, gpa }" 
+  -d '{
+    "query": "{ id, name, age, employed, gpa }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
+
 <br/>
 
 **resonse:**
@@ -103,13 +104,14 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ me {id, name, email, age}, post {id, title, body, published}}" 
+  -d '{
+    "query": "{ me {id, name, email, age}, post {id, title, body, published}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
+
 <br/>
 
 **resonse:**
@@ -144,8 +146,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ greeting(name: \"Andrew\", position: \"Teacher\"),  add(a: 2, b: 3) }" 
+  -d '{
+    "query": "{ greeting(name: \"Andrew\", position: \"Teacher\"),  add(a: 2, b: 3) }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -175,14 +177,13 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ add(numbers: [5, 10, 15, 20, 25]), grades }" 
+  -d '{
+    "query": "{ add(numbers: [5, 10, 15, 20, 25]), grades }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
-
 
 <br/>
 
@@ -213,14 +214,13 @@ $ curl \
 ```
 // GET ALL USERS
 $ curl \
-  -d '{ 
-    "query": "{ users{id, name, email, age} }" 
+  -d '{
+    "query": "{ users{id, name, email, age} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
-
 
 <br/>
 
@@ -255,21 +255,19 @@ $ curl \
 
 ```
 
-
 <br/>
 
 **request:**
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ users(query: \"A\"){id, name, email, age} }" 
+  -d '{
+    "query": "{ users(query: \"A\"){id, name, email, age} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
-
 
 <br/>
 
@@ -307,8 +305,8 @@ $ curl \
 ```
 // GET ALL POSTS
 $ curl \
-  -d '{ 
-    "query": "{ posts { id, title, body, published} }" 
+  -d '{
+    "query": "{ posts { id, title, body, published} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -353,8 +351,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ posts(query: \"GraphQL\"){ id, title, body, published} }" 
+  -d '{
+    "query": "{ posts(query: \"GraphQL\"){ id, title, body, published} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -397,8 +395,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ posts{ id, title, body, published, author { id, name }} }" 
+  -d '{
+    "query": "{ posts{ id, title, body, published, author { id, name }} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -449,7 +447,6 @@ $ curl \
 
 ```
 
-
 <br/>
 
 ### 15. Relational Data Arrays
@@ -460,8 +457,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ users{ id, name, email, posts { id, title }} }" 
+  -d '{
+    "query": "{ users{ id, name, email, posts { id, title }} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -524,8 +521,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ comments { id, text} }" 
+  -d '{
+    "query": "{ comments { id, text} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -572,8 +569,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "{ comments { id, text, author {id, name} } }" 
+  -d '{
+    "query": "{ comments { id, text, author {id, name} } }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -633,8 +630,8 @@ $ curl \
 ```
 // GET USERS
 $ curl \
-  -d '{ 
-    "query": "{ users{ id, name, email, posts { id, title }, comments { id, text}} }" 
+  -d '{
+    "query": "{ users{ id, name, email, posts { id, title }, comments { id, text}} }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -713,15 +710,15 @@ $ curl \
 
 ### 18. Comment Challenge Part III
 
-<br/> 
+<br/>
 
 **request:**
 
 ```
 // GET ALL COMMENTS
 $ curl \
-  -d '{ 
-    "query": "{ comments { id, text, author {id, name}, post {id, title} } }" 
+  -d '{
+    "query": "{ comments { id, text, author {id, name}, post {id, title} } }"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -797,8 +794,8 @@ $ curl \
 ```
 // GET POSTS
 $ curl \
-  -d '{ 
-    "query": "{ posts{ id, title, body, published, author { id, name }, comments {id, text} }}" 
+  -d '{
+    "query": "{ posts{ id, title, body, published, author { id, name }, comments {id, text} }}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -891,8 +888,8 @@ $ curl \
 ```
 // CREATE USER
 $ curl \
-  -d '{ 
-    "query": "mutation {createUser(name:\"Andrew\", email:\"testing@exmple.com\") {id, name, email, age}}" 
+  -d '{
+    "query": "mutation {createUser(name:\"Andrew\", email:\"testing@exmple.com\") {id, name, email, age}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -920,7 +917,6 @@ $ curl \
 
 ### 3. Creating Data with Mutations Part II
 
-
 <br/>
 
 **request:**
@@ -928,8 +924,8 @@ $ curl \
 ```
 // CREATE POST
 $ curl \
-  -d '{ 
-    "query": "mutation {createPost(title: \"My new post\", body: \"\", published: false, author: 1) {id, title, body, published, author {name} }}" 
+  -d '{
+    "query": "mutation {createPost(title: \"My new post\", body: \"\", published: false, author: 1) {id, title, body, published, author {name} }}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -964,8 +960,8 @@ $ curl \
 ```
 // CREATE COMMENT
 $ curl \
-  -d '{ 
-    "query": "mutation {createComment(text: \"You should check out David Cutter Music\", author: 1, post: 10) {id, text, author {name}, post {title} }}" 
+  -d '{
+    "query": "mutation {createComment(text: \"You should check out David Cutter Music\", author: 1, post: 10) {id, text, author {name}, post {title} }}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1010,8 +1006,8 @@ $ curl \
 ```
 // CREATE USER
 $ curl \
-  -d '{ 
-    "query": "mutation {createUser(data: {name:\"Andrew\", email:\"testing@exmple.com\"}) {id, name, email, age}}" 
+  -d '{
+    "query": "mutation {createUser(data: {name:\"Andrew\", email:\"testing@exmple.com\"}) {id, name, email, age}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1025,8 +1021,8 @@ $ curl \
 ```
 // CREATE POST v2
 $ curl \
-  -d '{ 
-    "query": "mutation {createPost(data: {title: \"My new post\", body: \"\", published: false, author: 1}) {id, title, body, published, author {name} }}" 
+  -d '{
+    "query": "mutation {createPost(data: {title: \"My new post\", body: \"\", published: false, author: 1}) {id, title, body, published, author {name} }}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1040,14 +1036,13 @@ $ curl \
 ```
 // CREATE COMMENT v2
 $ curl \
-  -d '{ 
-    "query": "mutation {createComment(data: {text: \"You should check out David Cutter Music\", author: 1, post: 10}) {id, text, author {name}, post {title} }}" 
+  -d '{
+    "query": "mutation {createComment(data: {text: \"You should check out David Cutter Music\", author: 1, post: 10}) {id, text, author {name}, post {title} }}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
-
 
 <br/>
 
@@ -1059,8 +1054,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "mutation {deleteUser(id: 1) {id}}" 
+  -d '{
+    "query": "mutation {deleteUser(id: 1) {id}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1085,8 +1080,8 @@ $ curl \
 
 ```
 $ curl \
-  -d '{ 
-    "query": "mutation {deletePost(id: 11) {id}}" 
+  -d '{
+    "query": "mutation {deletePost(id: 11) {id}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1097,15 +1092,14 @@ $ curl \
 
 // GET ALL POSTS
 
-
 <br/>
 
 **request:**
 
 ```
 $ curl \
-  -d '{ 
-    "query": "mutation {deleteComment(id: 103) {id}}" 
+  -d '{
+    "query": "mutation {deleteComment(id: 103) {id}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1135,8 +1129,8 @@ $ curl \
 ```
 // UPDATE USER
 $ curl \
-  -d '{ 
-    "query": "mutation {updateUser(id: 1, data: {name:\"Andrew1\", email:\"testing1@exmple.com\", age: 28}) {id, name, email, age}}" 
+  -d '{
+    "query": "mutation {updateUser(id: 1, data: {name:\"Andrew1\", email:\"testing1@exmple.com\", age: 28}) {id, name, email, age}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1158,8 +1152,8 @@ $ curl \
 ```
 // UPDATE POST
 $ curl \
-  -d '{ 
-    "query": "mutation {updatePost(id: 10, data: {title: \"My new post1\", body: \"My body1\", published: true}) {id, title, body, published}}" 
+  -d '{
+    "query": "mutation {updatePost(id: 10, data: {title: \"My new post1\", body: \"My body1\", published: true}) {id, title, body, published}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1170,7 +1164,6 @@ $ curl \
 
 // GET ALL POSTS
 
-
 <br/>
 
 **request:**
@@ -1178,8 +1171,8 @@ $ curl \
 ```
 // UPDATE COMMENT
 $ curl \
-  -d '{ 
-    "query": "mutation {updateComment(id: 105, data: {text: \"My Updated text\"}) {id, text}}" 
+  -d '{
+    "query": "mutation {updateComment(id: 105, data: {text: \"My Updated text\"}) {id, text}}"
   }' \
   -H "Content-Type: application/json" \
   -X POST http://localhost:4000  \
@@ -1230,7 +1223,6 @@ subscription{
 // CREATE COMMENT v2  
 with post: 10
 
-
 <br/>
 
 ### 4. Setting up a Posts Subscription
@@ -1251,10 +1243,162 @@ subscription{
 
 <br/>
 
+```
+// CREATE POST v2
+"published": true
+```
+
+<br/>
+
+### 5. Expanding the Posts Subscription for Edits and Deletions
 
 ```
-// CREATE POST v2  
-"published": true
+subscription{
+  post {
+  mutation,
+  data {
+    id,
+    title,
+    body,
+    author {
+      id,
+      name
+    }
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createPost(
+    data: {
+      title: "My new post",
+      body: "My new body",
+      published: true,
+      author: 1
+    }
+  )
+    {
+      id,
+      title,
+      body,
+      published
+    }
+}
+```
+
+<br/>
+
+**response:**
+
+```
+{
+  "data": {
+    "post": {
+      "mutation": "CREATED",
+      "data": {
+        "id": "6368144e-71d4-43fc-941c-2a2c743fbf7e",
+        "title": "My new post",
+        "body": "My new body",
+        "author": {
+          "id": "1",
+          "name": "Andrew"
+        }
+      }
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deletePost(id: "10")
+    {
+      id,
+      title,
+      body,
+      published
+    }
+}
+```
+
+<br/>
+
+**response:**
+
+```
+{
+  "data": {
+    "post": {
+      "mutation": "DELETED",
+      "data": {
+        "id": "10",
+        "title": "GraphQL 101",
+        "body": "This is how to use GraphQL...",
+        "author": {
+          "id": "1",
+          "name": "Andrew"
+        }
+      }
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(id: "10",
+  data: {
+    published: true
+  })
+    {
+      id,
+      title,
+      body,
+      published
+    }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(id: "10",
+  data: {
+    published: false
+  })
+    {
+      id,
+      title,
+      body,
+      published
+    }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(id: "10",
+  data: {
+    body: "Something new..."
+  })
+    {
+      id,
+      title,
+      body,
+      published
+    }
+}
 ```
 
 ---

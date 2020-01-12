@@ -84,28 +84,44 @@ const Mutation = {
     db.POSTS.push(post);
 
     if (args.data.published) {
-      pubsub.publish('post', { post });
+      pubsub.publish('post', {
+        post: {
+          mutation: 'CREATED',
+          data: post
+        }
+      });
     }
 
     return post;
   },
-  deletePost(parent, args, { db }, info) {
+  deletePost(parent, args, { db, pubsub }, info) {
     const postIndex = db.POSTS.findIndex(post => post.id === args.id);
 
     if (postIndex === -1) {
       throw new Error('Post not found!');
     }
 
-    const deletedPosts = db.POSTS.splice(postIndex, 1);
+    const [post] = db.POSTS.splice(postIndex, 1);
 
     db.COMMENTS = db.COMMENTS.filter(comment => comment.post !== args.id);
 
-    return deletedPosts[0];
+    if (post.published) {
+      pubsub.publish('post', {
+        post: {
+          mutation: 'DELETED',
+          data: post
+        }
+      });
+    }
+
+    return post;
   },
-  updatePost(parent, args, { db }, info) {
+  updatePost(parent, args, { db, pubsub }, info) {
     const { id, data } = args;
 
     const post = db.POSTS.find(post => post.id === id);
+
+    const originalPost = { ...post };
 
     if (!post) {
       throw new Error('Post not found!');
@@ -119,8 +135,31 @@ const Mutation = {
       post.body = data.body;
     }
 
-    if (typeof data.published === 'published') {
+    if (typeof data.published === 'boolean') {
       post.published = data.published;
+
+      if (originalPost.published && !post.published) {
+        pubsub.publish('post', {
+          post: {
+            mutation: 'DELETED',
+            data: originalPost
+          }
+        });
+      } else if (!originalPost.published && post.published) {
+        pubsub.publish('post', {
+          post: {
+            mutation: 'CREATED',
+            data: post
+          }
+        });
+      }
+    } else if (post.published) {
+      pubsub.publish('post', {
+        post: {
+          mutation: 'UPDATED',
+          data: post
+        }
+      });
     }
 
     return post;

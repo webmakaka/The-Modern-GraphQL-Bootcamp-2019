@@ -29,7 +29,7 @@ const POSTS = [
     id: '11',
     title: 'GraphQL 201',
     body: 'This is an advanced GraphQL post...',
-    published: false,
+    published: true,
     author: '1'
   },
   {
