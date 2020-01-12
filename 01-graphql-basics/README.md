@@ -1038,7 +1038,7 @@ $ curl \
 **request:**
 
 ```
-// CREATE COMMENT
+// CREATE COMMENT v2
 $ curl \
   -d '{ 
     "query": "mutation {createComment(data: {text: \"You should check out David Cutter Music\", author: 1, post: 10}) {id, text, author {name}, post {title} }}" 
@@ -1207,6 +1207,26 @@ subscription{
   count
 }
 ```
+
+<br/>
+
+### 3. Setting up a Comments Subscription
+
+```
+subscription{
+  comment(postId: "10"){
+    id,
+    text,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+// CREATE COMMENT v2
+with post: 10
 
 
 ---
