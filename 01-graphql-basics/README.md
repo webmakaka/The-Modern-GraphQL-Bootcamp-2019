@@ -1067,6 +1067,47 @@ $ curl \
 // GET COMMENTS
 ```
 
+<br/>
+
+### 7. Deleting Data with Mutations Part II
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {deletePost(id: 11) {id}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+// GET POSTS
+
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {deleteComment(id: 103) {id}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+// GET COMMENTS
+
 
 
 ---
