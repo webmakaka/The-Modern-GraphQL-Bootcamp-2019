@@ -211,6 +211,7 @@ $ curl \
 **request:**
 
 ```
+// GET ALL USERS
 $ curl \
   -d '{ 
     "query": "{ users{id, name, email, age} }" 
@@ -887,6 +888,7 @@ $ curl \
 **request:**
 
 ```
+// CREATE USER
 $ curl \
   -d '{ 
     "query": "mutation {createUser(name:\"Andrew\", email:\"testing@exmple.com\") {id, name, email, age}}" 
@@ -1115,6 +1117,27 @@ $ curl \
 <br/>
 
 ### 9. A Pro GraphQL Project Structure Part II
+
+<br/>
+
+### 10. Updating Data with Mutations Part I
+
+<br/>
+
+**request:**
+
+```
+// UPDATE USER
+$ curl \
+  -d '{ 
+    "query": "mutation {updateUser(id: 1, data: {name:\"Andrew1\", email:\"testing1@exmple.com\", age: 28}) {id, name, email, age}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+// GET ALL USERS
 
 ---
 
