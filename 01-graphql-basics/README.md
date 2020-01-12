@@ -711,7 +711,7 @@ $ curl \
 
 ### 18. Comment Challenge Part III
 
-<br/>
+<br/> 
 
 **request:**
 
@@ -986,8 +986,6 @@ $ curl \
         }
     }
 }
-
-
 ```
 
 <br/>
@@ -1041,6 +1039,34 @@ $ curl \
   -X POST http://localhost:4000  \
   | python -m json.tool
 ```
+
+
+<br/>
+
+### 6. Deleting Data with Mutations Part I
+
+<br/>
+
+**request:**
+
+```
+$ curl \
+  -d '{ 
+    "query": "mutation {deleteUser(id: 1) {id}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+```
+// GET USERS
+// GET POSTS
+// GET COMMENTS
+```
+
 
 
 ---
