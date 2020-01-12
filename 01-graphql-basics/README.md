@@ -305,6 +305,7 @@ $ curl \
 <br/>
 
 ```
+// GET ALL POSTS
 $ curl \
   -d '{ 
     "query": "{ posts { id, title, body, published} }" 
@@ -717,7 +718,7 @@ $ curl \
 **request:**
 
 ```
-// GET COMMENTS
+// GET ALL COMMENTS
 $ curl \
   -d '{ 
     "query": "{ comments { id, text, author {id, name}, post {id, title} } }" 
@@ -925,6 +926,7 @@ $ curl \
 **request:**
 
 ```
+// CREATE POST
 $ curl \
   -d '{ 
     "query": "mutation {createPost(title: \"My new post\", body: \"\", published: false, author: 1) {id, title, body, published, author {name} }}" 
@@ -960,6 +962,7 @@ $ curl \
 **request:**
 
 ```
+// CREATE COMMENT
 $ curl \
   -d '{ 
     "query": "mutation {createComment(text: \"You should check out David Cutter Music\", author: 1, post: 10) {id, text, author {name}, post {title} }}" 
@@ -1005,6 +1008,7 @@ $ curl \
 **request:**
 
 ```
+// CREATE USER
 $ curl \
   -d '{ 
     "query": "mutation {createUser(data: {name:\"Andrew\", email:\"testing@exmple.com\"}) {id, name, email, age}}" 
@@ -1019,6 +1023,7 @@ $ curl \
 **request:**
 
 ```
+// CREATE POST
 $ curl \
   -d '{ 
     "query": "mutation {createPost(data: {title: \"My new post\", body: \"\", published: false, author: 1}) {id, title, body, published, author {name} }}" 
@@ -1033,6 +1038,7 @@ $ curl \
 **request:**
 
 ```
+// CREATE COMMENT
 $ curl \
   -d '{ 
     "query": "mutation {createComment(data: {text: \"You should check out David Cutter Music\", author: 1, post: 10}) {id, text, author {name}, post {title} }}" 
@@ -1064,9 +1070,9 @@ $ curl \
 <br/>
 
 ```
-// GET USERS
-// GET POSTS
-// GET COMMENTS
+// GET ALL USERS
+// GET ALL POSTS
+// GET ALL COMMENTS
 ```
 
 <br/>
@@ -1089,7 +1095,7 @@ $ curl \
 
 <br/>
 
-// GET POSTS
+// GET ALL POSTS
 
 
 <br/>
@@ -1108,7 +1114,7 @@ $ curl \
 
 <br/>
 
-// GET COMMENTS
+// GET ALL COMMENTS
 
 <br/>
 
@@ -1137,7 +1143,52 @@ $ curl \
   | python -m json.tool
 ```
 
+<br/>
+
 // GET ALL USERS
+
+<br/>
+
+### 11. Updating Data with Mutations Part II
+
+<br/>
+
+**request:**
+
+```
+// UPDATE POST
+$ curl \
+  -d '{ 
+    "query": "mutation {updatePost(id: 10, data: {title: \"My new post1\", body: \"My body1\", published: true}) {id, title, body, published}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+// GET ALL POSTS
+
+
+<br/>
+
+**request:**
+
+```
+// UPDATE COMMENT
+$ curl \
+  -d '{ 
+    "query": "mutation {updateComment(id: 105, data: {text: \"My Updated text\"}) {id, text}}" 
+  }' \
+  -H "Content-Type: application/json" \
+  -X POST http://localhost:4000  \
+  | python -m json.tool
+```
+
+<br/>
+
+// GET ALL COMMENTS
 
 ---
 

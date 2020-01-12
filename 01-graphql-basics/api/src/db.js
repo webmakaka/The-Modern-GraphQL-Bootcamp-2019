@@ -56,7 +56,7 @@ const COMMENTS = [
   },
   {
     id: '104',
-    text: 'This did no work!',
+    text: 'This did not work!',
     author: '2',
     post: '11'
   },
