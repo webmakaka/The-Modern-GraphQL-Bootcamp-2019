@@ -1470,6 +1470,10 @@ mutation {
 }
 ```
 
+<br/>
+
+### 7. Enums
+
 ---
 
 **Marley**
