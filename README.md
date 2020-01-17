@@ -1,10 +1,8 @@
 # [Udemy, Andrew Mead] The Modern GraphQL Bootcamp (Advanced Node.js) [2019, ENG]
 
-
-
 ### [GraphQL Basics](./01-graphql-basics/README.md)
 
-
+### [GraphQL Prisma](./02-graphql-prisma/README.md)
 
 ---
 
