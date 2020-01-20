@@ -82,6 +82,132 @@ http://localhost:4466/
 
 <br/>
 
+### 07. Exploring the Prisma GraphQL API
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Andrey Mead"
+    }
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Vikram"
+    }
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+```
+query{
+  users {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updateUser(
+    where: {
+      id: "ck5lxfneg006b0706xaec3ind"
+    },
+    data: {
+      name: "Andrew"
+    }
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteUser (
+    where: {
+      id: "ck5lxfneg006b0706xaec3ind"
+    }){
+    id,
+    name
+  }
+}
+
+```
+
+<br/>
+
+### 08. Add Post type to Prisma
+
+pgadmin --> remove tables
+
+<br/>
+
+    $ prisma deploy
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Andrey Mead",
+      email: "anrew@example.com"
+    }
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createPost(
+    data: {
+      title: "Prisma title",
+      body: "Prisma body",
+      published: false,
+      author: {
+        connect: {
+          id: "ck5lzwfh800n90838emq6q076"
+        }
+      }
+    }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
 ---
 
 **Marley**
