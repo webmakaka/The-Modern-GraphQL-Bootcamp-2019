@@ -166,12 +166,14 @@ pgadmin --> remove tables
 
     $ prisma deploy
 
+<br/>
+
 ```
 mutation {
   createUser(
     data: {
       name: "Andrey Mead",
-      email: "anrew@example.com"
+      email: "andrew@example.com"
     }
   ) {
     id,
@@ -201,6 +203,112 @@ mutation {
     body,
     published,
     author {
+      id,
+      name
+    }
+  }
+}
+```
+
+<br/>
+
+### 09. Adding Comment Type to Prisma
+
+<br/>
+
+    $ prisma deploy
+
+<br/>
+
+```
+query{
+  users {
+    id,
+    name,
+    posts {
+      id
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(
+    where: {
+      id: "ck5m02cip00r708384cgc5bp8"
+    },
+    data: {
+      published: true
+    }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Marley",
+      email: "marley@pochta.ru"
+    }
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createComment(
+    data: {
+      text: "A comment from Prisma GraphQL",
+      author: {
+        connect: {
+          id: "ck5m0ub1a019u0838z2qtnjp6"
+        }
+      },
+      post: {
+        connect: {
+          id: "ck5m02cip00r708384cgc5bp8"
+        }
+      }}
+  )
+  {
+      id,
+      text,
+      author{
+        id,
+        name
+      }
+  }
+}
+```
+
+<br/>
+
+```
+query {
+  comments{
+    id,
+    text,
+    author{
       id,
       name
     }
