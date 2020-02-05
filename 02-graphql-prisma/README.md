@@ -338,6 +338,8 @@ https://github.com/Urigo/graphql-cli
 
     $ npm start
 
+<br/>
+
 **response:**
 
 ```
@@ -372,6 +374,10 @@ https://github.com/Urigo/graphql-cli
 ]
 
 ```
+
+<br/>
+
+### 12. Mutations with Prisma Bindings
 
 ---
 
