@@ -379,6 +379,23 @@ https://github.com/Urigo/graphql-cli
 
 ### 12. Mutations with Prisma Bindings
 
+**response**
+
+```
+***
+  {
+    "id": "ck69ming2002z0744utek6zy6",
+    "title": "GraphQL 101!",
+    "body": "This is how to get started with GraphQL...",
+    "published": true
+  }
+
+```
+
+<br/>
+
+### 13. Using AsyncAwait with Prisma Bindings
+
 ---
 
 **Marley**
