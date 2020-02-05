@@ -332,6 +332,47 @@ https://github.com/Urigo/graphql-cli
 
     $ npm run get-schema
 
+<br/>
+
+### 11. Using Prisma Bindings
+
+    $ npm start
+
+**response:**
+
+```
+[
+  {
+    "id": "ck5lzwfh800n90838emq6q076",
+    "name": "Andrey Mead",
+    "email": "anrew@example.com",
+    "posts": [
+      {
+        "id": "ck5m02cip00r708384cgc5bp8",
+        "title": "Prisma title"
+      }
+    ]
+  },
+  {
+    "id": "ck5m0ub1a019u0838z2qtnjp6",
+    "name": "Marley",
+    "email": "marley@pochta.ru",
+    "posts": []
+  }
+]
+[
+  {
+    "id": "ck5m14p6001go0838rl9yhjq5",
+    "text": "A comment from Prisma GraphQL",
+    "author": {
+      "id": "ck5m0ub1a019u0838z2qtnjp6",
+      "name": "Marley"
+    }
+  }
+]
+
+```
+
 ---
 
 **Marley**
