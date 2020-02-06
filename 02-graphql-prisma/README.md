@@ -405,7 +405,6 @@ https://github.com/Urigo/graphql-cli
 
 ### 15. Customizing Type Relationships
 
-
 <br/>
 
     $ prisma deploy
@@ -425,6 +424,19 @@ mutation {
   }
 }
 ```
+
+<br/>
+
+### 16. Modeling a Review System with Prisma Set Up
+
+    $ cd ../prisma-review-website/
+    $ prisma deploy
+
+http://localhost:4466/reviews/default
+
+<br/>
+
+![Application](../img/pic-02-03.png?raw=true)
 
 ---
 
