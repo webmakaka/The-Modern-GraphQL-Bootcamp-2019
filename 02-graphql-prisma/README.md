@@ -144,6 +144,7 @@ mutation {
 <br/>
 
 ```
+// DELETE USER
 mutation {
   deleteUser (
     where: {
@@ -399,6 +400,31 @@ https://github.com/Urigo/graphql-cli
 <br/>
 
 ### 14. Checking If Data Exists Using Prisma Bindings
+
+<br/>
+
+### 15. Customizing Type Relationships
+
+
+<br/>
+
+    $ prisma deploy
+
+<br/>
+
+```
+// DELETE USER
+mutation {
+  deleteUser (
+    where: {
+      id: "ck5lxfneg006b0706xaec3ind"
+    }){
+    id,
+    name,
+    email
+  }
+}
+```
 
 ---
 
