@@ -427,7 +427,7 @@ mutation {
 
 <br/>
 
-### 16. Modeling a Review System with Prisma Set Up
+### 16. Modeling a Review System with Prisma Set Up (Challenge description)
 
     $ cd ../prisma-review-website/
     $ prisma deploy
@@ -437,6 +437,230 @@ http://localhost:4466/reviews/default
 <br/>
 
 ![Application](../img/pic-02-03.png?raw=true)
+
+<br/>
+
+### 17. Modeling a Review System with Prisma Solution (Challenge solution)
+
+    $ cd prisma-review-website/
+    $ prisma deploy
+
+http://localhost:4466/reviews/default
+
+<br/>
+
+I recreate postgresql database (heroku). Because there was a strange error.
+
+<br/>
+
+```
+mutation {
+  createBook(data: {
+    title: "Rest",
+    author: "Alex Pang",
+    isbn: "abc123"
+  }) {
+    id,
+    title,
+    author,
+    isbn,
+    reviews {
+      id,
+      text,
+      rating
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createUser(data: {
+    username: "SleepyGuy"
+  }) {
+    id,
+    username
+  }
+}
+```
+
+```
+mutation {
+  createUser(data: {
+    username: "SleepyGal"
+  }) {
+    id,
+    username
+  }
+}
+```
+
+<br/>
+
+```
+query{
+  users {
+    id,
+  	username
+  }
+}
+
+```
+
+<br/>
+
+```
+mutation {
+  createReview(data:{
+    text: "It was a good read!",
+    rating: 5,
+    book: {
+      connect: {
+        id: "ck6arh4vn004p07468ckj2nz8"
+      }
+    },
+    author: {
+      connect: {
+        id: "ck6argu6000490746mrsvxjoc"
+      }
+    }
+  }) {
+    id,
+    text,
+    rating
+  }
+}
+
+```
+
+<br/>
+
+```
+mutation {
+  createReview(data:{
+    rating: 4,
+    book: {
+      connect: {
+        id: "ck6arh4vn004p07468ckj2nz8"
+      }
+    },
+    author: {
+      connect: {
+        id: "ck6argzgq004h0746aszfgqbm"
+      }
+    }
+  }) {
+    id,
+    text,
+    rating
+  }
+}
+```
+
+<br/>
+
+```
+query {
+  books {
+    id,
+    title,
+    author,
+    isbn,
+    reviews {
+      id,
+      text,
+      rating,
+      author {
+        id,
+        username
+      }
+    }
+  }
+}
+```
+
+<br/>
+
+**response:**
+
+<br/>
+
+```
+{
+  "data": {
+    "books": [
+      {
+        "author": "Alex Pang",
+        "id": "ck6arh4vn004p07468ckj2nz8",
+        "reviews": [
+          {
+            "id": "ck6asjcyk00qq0746w558ylg4",
+            "text": "It was a good read!",
+            "rating": 5,
+            "author": {
+              "id": "ck6argu6000490746mrsvxjoc",
+              "username": "SleepyGuy"
+            }
+          },
+          {
+            "id": "ck6aslhrr00sa074631tweq7n",
+            "text": null,
+            "rating": 4,
+            "author": {
+              "id": "ck6argzgq004h0746aszfgqbm",
+              "username": "SleepyGal"
+            }
+          }
+        ],
+        "isbn": "abc123",
+        "title": "Rest"
+      }
+    ]
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteUser(
+    where: {
+      id: "ck6argu6000490746mrsvxjoc"
+    }
+  ) {
+    id,
+    username
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteBook(
+    where: {
+      id: "ck6arh4vn004p07468ckj2nz8"
+    }
+  ) {
+    id,
+    title
+  }
+}
+```
+
+<br/>
+
+```
+query {
+  reviews{
+    id
+  }
+}
+```
 
 ---
 
