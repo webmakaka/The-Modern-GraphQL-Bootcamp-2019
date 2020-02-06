@@ -396,6 +396,10 @@ https://github.com/Urigo/graphql-cli
 
 ### 13. Using AsyncAwait with Prisma Bindings
 
+<br/>
+
+### 14. Checking If Data Exists Using Prisma Bindings
+
 ---
 
 **Marley**
