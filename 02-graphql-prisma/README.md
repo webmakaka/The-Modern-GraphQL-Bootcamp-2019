@@ -449,7 +449,7 @@ http://localhost:4466/reviews/default
 
 <br/>
 
-I recreate postgresql database (heroku). Because there was a strange error.
+I recreated postgresql database (heroku). Because there was a strange error.
 
 <br/>
 
