@@ -304,6 +304,103 @@ mutation {
 }
 ```
 
+<br/>
+
+### 08. Adding Prisma into GraphQL Subscriptions
+
+<br/>
+
+    $ npm run get-schema
+
+<br/>
+
+![Application](../img/pic-03-01.png?raw=true)
+
+<br/>
+
+```
+subscription{
+  comment (postId: "ck6cezzl700oo0737brmzed77") {
+    mutation,
+    node {
+      id,
+      text,
+      author {
+        id,
+        name
+      }
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createComment(
+    data: {
+      text: "This should be in Prisma 6 !",
+      author: "ck6bvjuch001307371hgg0s7o",
+      post: "ck6bvke8j001l0737yxoxf1vt"
+    }
+  )
+    {
+      id,
+      text
+    }
+}
+```
+
+<br/>
+
+```
+subscription {
+  post {
+    mutation
+    node {
+      id
+      title
+      body
+      author {
+        id
+        name
+      }
+    }
+  }
+}
+
+```
+
+<br/>
+
+```
+mutation {
+  createPost(
+    data: {
+      title: "Stories by Jess 2",
+      body: "...",
+      published: true,
+      author: "ck6bvjuch001307371hgg0s7o"
+      }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+```
+
+<br/>
+
+![Application](../img/pic-03-02.png?raw=true)
+
 ---
 
 **Marley**

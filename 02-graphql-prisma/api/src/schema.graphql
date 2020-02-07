@@ -87,7 +87,7 @@ type Comment {
 
 enum MutationType {
   CREATED
-  UPDTED
+  UPDATED
   DELETED
 }
 
