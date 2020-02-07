@@ -197,6 +197,113 @@ mutation {
 
 ```
 
+<br/>
+
+### 07. Adding Prisma into GraphQL Update Mutations Part II
+
+```
+mutation{
+  deletePost(id: "ck6ca6fvt00na0737zhweer3o"){
+    id,
+    title,
+    body,
+    published
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(
+      id: "ck6bvke8j001l0737yxoxf1vt",
+    data: {
+      title: "Stories by Jess",
+      body: "...",
+      published: true
+      }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+```
+
+<br/>
+
+    $ npm run get-schema
+
+<br/>
+
+```
+mutation {
+  createComment(
+    data: {
+      text: "This should be in Prisma!",
+      author: "ck6bvjuch001307371hgg0s7o",
+      post: "ck6bvke8j001l0737yxoxf1vt"
+    }
+  )
+    {
+      id,
+      text
+    }
+}
+```
+
+<br/>
+
+```
+query{
+  comments{
+    id,
+    text,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updateComment(
+    id: "ck6cd8xaw00nx0737cpi3k3nw",
+    data: {
+      text: "New text for comment!"
+    }
+  )
+    {
+      id,
+      text
+    }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteComment(
+    id: "ck6cd8xaw00nx0737cpi3k3nw"
+  ) {
+    id
+    text
+  }
+}
+```
+
 ---
 
 **Marley**
