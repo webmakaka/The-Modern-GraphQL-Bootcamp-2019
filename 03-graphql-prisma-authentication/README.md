@@ -1,10 +1,14 @@
 # [Udemy, Andrew Mead] The Modern GraphQL Bootcamp (Advanced Node.js) [2019, ENG]
 
-### [GraphQL Basics](./01-graphql-basics/README.md)
+# GraphQL Prisma Authentication
 
-### [GraphQL Prisma](./02-graphql-prisma/README.md)
+<br/>
 
-### [GraphQL Prisma Authentication](./03-graphql-prisma-authentication/README.md)
+## 6. Authentication with GraphQL
+
+<br/>
+
+### 02. Adding Prisma into GraphQL Queries
 
 ---
 
