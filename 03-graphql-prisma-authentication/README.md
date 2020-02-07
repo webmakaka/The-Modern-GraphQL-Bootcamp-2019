@@ -153,6 +153,50 @@ mutation {
 }
 ```
 
+<br/>
+
+### 06. Adding Prisma into GraphQL Update Mutations Part I
+
+```
+mutation {
+  updateUser(
+    id: "ck6bvjuch001307371hgg0s7o",
+    data: {
+      name: "Andrew Mead1"
+    }
+  ){
+    id,
+    name,
+    email
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createPost(
+    data: {
+      title: "Stories by Jess",
+      body: "...",
+      published: true,
+      author: "ck6bvjuch001307371hgg0s7o"
+      }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+```
+
 ---
 
 **Marley**
