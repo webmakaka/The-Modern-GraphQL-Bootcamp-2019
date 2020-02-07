@@ -6,6 +6,12 @@
 
 ## 6. Authentication with GraphQL
 
+**Need to work with local project**
+
+    $ npm start
+
+http://localhost:4000/
+
 <br/>
 
 ### 02. Adding Prisma into GraphQL Queries
@@ -85,6 +91,32 @@ query{
 ```
 
 <br/>
+
+### 03. Integrating Operation Arguments
+
+```
+query{
+  users (query: "andrew@example.com")  {
+    id,
+    name,
+   email
+  }
+}
+```
+
+<br/>
+
+```
+query{
+  posts (
+    query: "isma"
+  ) {
+    title,
+    body,
+    published,
+  }
+}
+```
 
 ---
 
