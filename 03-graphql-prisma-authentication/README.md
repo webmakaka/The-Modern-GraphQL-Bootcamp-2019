@@ -6,7 +6,7 @@
 
 ## 6. Authentication with GraphQL
 
-**Need to work with local project**
+**Need to work with local project (no prisma)**
 
     $ npm start
 
@@ -15,10 +15,6 @@ http://localhost:4000/
 <br/>
 
 ### 02. Adding Prisma into GraphQL Queries
-
-<br/>
-
-I recreated postgresql database (heroku). Because there was an error.
 
 <br/>
 
@@ -117,6 +113,10 @@ query{
   }
 }
 ```
+
+<br/>
+
+### 04. Refactoring Custom Type Resolvers
 
 ---
 
