@@ -401,6 +401,19 @@ mutation {
 
 ![Application](../img/pic-03-02.png?raw=true)
 
+<br/>
+
+### 09. Closing Prisma to the Outside World
+
+    $ prisma deploy
+    $ prisma token
+
+    $ npm start
+
+<br/>
+
+![Application](../img/pic-03-03.png?raw=true)
+
 ---
 
 **Marley**
