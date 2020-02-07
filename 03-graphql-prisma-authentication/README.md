@@ -6,6 +6,8 @@
 
 ## 6. Authentication with GraphQL
 
+I recreated postgresql database (heroku). Because there was an error.
+
 **Need to work with local project (no prisma)**
 
     $ npm start
@@ -117,6 +119,39 @@ query{
 <br/>
 
 ### 04. Refactoring Custom Type Resolvers
+
+<br/>
+
+### 05. Adding Prisma into GraphQL Mutations
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Jess",
+      email: "jess@example.com"
+    }
+  ) {
+    id,
+    name,
+    email
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteUser(
+    id: "ck6bznba000ms0737fo4vkzdn"
+  ) {
+    id,
+    name,
+    email
+  }
+}
+```
 
 ---
 
