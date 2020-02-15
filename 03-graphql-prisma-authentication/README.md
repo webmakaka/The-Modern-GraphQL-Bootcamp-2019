@@ -430,6 +430,45 @@ I recreated postgresql database (heroku). Because there was an error.
 
     $ npm run get-schema
 
+<br/>
+
+### 11. Storing Passwords
+
+https://www.npmjs.com/package/bcryptjs
+
+<br/>
+
+    $ npm uninstall --save uuid
+    $ npm install --save bcryptjs
+
+http://localhost:4000/
+
+<br/>
+
+I restarted docker-compose
+
+<br/>
+
+    $ npm run get-schema
+
+<br/>
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Marley",
+      email: "marley@example.com",
+      password: "password123"
+    }
+  ) {
+    id,
+    name,
+    email
+  }
+}
+```
+
 ---
 
 **Marley**
