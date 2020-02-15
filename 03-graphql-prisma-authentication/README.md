@@ -469,6 +469,56 @@ mutation {
 }
 ```
 
+<br/>
+
+### 12. Creating Auth Tokens with JSON Web Tokens
+
+https://www.npmjs.com/package/jsonwebtoken
+
+    $ npm install --save jsonwebtoken
+
+<br/>
+
+**request:**
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Jess",
+      email: "jess@example.com",
+      password: "password123"
+    }
+  ) {
+    user {
+      id,
+      name,
+      email
+    },
+    token
+  }
+}
+```
+
+<br/>
+
+**response:**
+
+```
+{
+  "data": {
+    "createUser": {
+      "user": {
+        "id": "ck6o789ao000f0789qxphmjrq",
+        "name": "Jess",
+        "email": "jess@example.com"
+      },
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODE4MDczMDZ9.VihhXxxQW5Qab3hTWxvottPM-_eYoZ6GhFXOJ_EYX8o"
+    }
+  }
+}
+```
+
 ---
 
 **Marley**
