@@ -414,6 +414,22 @@ mutation {
 
 ![Application](../img/pic-03-03.png?raw=true)
 
+<br/>
+
+### 10. Allowing for Generated Schemas
+
+    $ prisma delete
+    $ prisma deploy
+
+I recreated postgresql database (heroku). Because there was an error.
+
+    $ docker-compose stop
+    $ docker-compose up -d
+
+    $ prisma deploy
+
+    $ npm run get-schema
+
 ---
 
 **Marley**
