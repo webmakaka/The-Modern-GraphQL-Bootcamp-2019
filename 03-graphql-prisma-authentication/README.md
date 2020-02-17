@@ -611,6 +611,100 @@ mutation{
 
 ```
 
+<br/>
+
+### 16. Locking Down Mutations (Posts and Comments)
+
+```
+mutation {
+  updatePost(
+      id: "ck6qp80q9002y0889zdx4i08l",
+    data: {
+      title: "Jess is awesome Girl!",
+      body: "...",
+      published: true
+      }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+
+```
+
+<br/>
+
+```
+
+mutation {
+  createComment(
+    data: {
+      text: "Jess Comments It !",
+      post: "ck6qohbqd002m0889je4aqzu2"
+    }
+  )
+    {
+      id,
+      text
+    }
+}
+
+```
+
+<br/>
+
+```
+query{
+  posts {
+    id,
+    title,
+    body,
+    published,
+    comments {
+      id,
+      text
+    }
+  }
+}
+
+```
+
+<br/>
+
+```
+mutation {
+  updateComment(
+    id: "ck6qq84v5003z0889lxycb9p8",
+    data: {
+      text: "Wrong comment! Please Delete!"
+    }
+  )
+    {
+      id,
+      text
+    }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteComment(
+    id: "ck6qq84v5003z0889lxycb9p8"
+  ) {
+    id
+    text
+  }
+}
+```
+
 ---
 
 **Marley**
