@@ -536,6 +536,14 @@ mutation {
 
 ```
 
+<br/>
+
+### 14. Validating Auth Tokens
+
+<br/>
+
+![Application](../img/pic-03-04.png?raw=true)
+
 ---
 
 **Marley**
