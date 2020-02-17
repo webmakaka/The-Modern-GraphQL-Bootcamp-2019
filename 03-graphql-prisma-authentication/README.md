@@ -544,6 +544,73 @@ mutation {
 
 ![Application](../img/pic-03-04.png?raw=true)
 
+<br/>
+
+### 15. Locking Down Mutations (Users)
+
+<br/>
+
+```
+mutation {
+  updateUser(
+    data: {
+      name: "Marley5",
+      email: "marley5@example.com"
+    }
+  ){
+    id,
+    name,
+    email
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  deleteUser {
+    id,
+    name,
+    email
+  }
+}
+
+```
+
+<br/>
+
+```
+mutation {
+  createPost(
+    data: {
+      title: "Jess super Girl!",
+      body: "...",
+      published: true
+      }
+  ){
+    id,
+    title,
+    body,
+    published
+  }
+}
+```
+
+<br/>
+
+```
+mutation{
+  deletePost(id: "ck6qo04lx001x08896d0e0npt"){
+    id,
+    title,
+    body,
+    published
+  }
+}
+
+```
+
 ---
 
 **Marley**

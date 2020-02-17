@@ -10,16 +10,16 @@ type Mutation {
   login(data: LoginUserInput): AuthPayload!
 
   createUser(data: CreateUserInput!): AuthPayload!
-  deleteUser(id: ID!): User!
-  updateUser(id: ID!, data: UpdateUserInput!): User!
+  updateUser(data: UpdateUserInput!): User!
+  deleteUser: User!
 
   createPost(data: CreatePostInput!): Post!
-  deletePost(id: ID!): Post!
   updatePost(id: ID!, data: UpdatePostInput!): Post!
+  deletePost(id: ID!): Post!
 
   createComment(data: CreateCommentInput!): Comment!
-  deleteComment(id: ID!): Comment!
   updateComment(id: ID!, data: UpdateCommentInput!): Comment!
+  deleteComment(id: ID!): Comment!
 }
 
 type Subscription {
