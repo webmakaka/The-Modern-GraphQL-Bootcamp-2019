@@ -519,6 +519,23 @@ mutation {
 }
 ```
 
+<br/>
+
+### 13. Logging in Existing Users
+
+```
+mutation {
+  login(data: { email: "jess@example.com", password: "password123" }) {
+    user {
+      id,
+      name
+    },
+    token
+  }
+}
+
+```
+
 ---
 
 **Marley**
