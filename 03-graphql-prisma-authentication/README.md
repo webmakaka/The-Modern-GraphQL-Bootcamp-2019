@@ -786,6 +786,24 @@ query{
 
 ![Application](../img/pic-03-05.png?raw=true)
 
+<br/>
+
+### 19. Locking Down Individual Type Fields
+
+```
+query{
+  users {
+    id,
+    name,
+    email
+  }
+}
+```
+
+Only owner email shows
+
+But some issue on delete id from the query.
+
 ---
 
 **Marley**
