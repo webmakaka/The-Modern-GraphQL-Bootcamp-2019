@@ -416,6 +416,15 @@ mutation {
 
 <br/>
 
+```
+{
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazZvNzg5YW8wMDBmMDc4OXF4cGhtanJxIiwiaWF0IjoxNTgxOTYxMzA2fQ.0YV6X3QwjkOw5lqdcKhZXLh8WSUGryL2zgrUaDbqUKk"
+}
+
+```
+
+<br/>
+
 ### 10. Allowing for Generated Schemas
 
     $ prisma delete
@@ -701,6 +710,59 @@ mutation {
   ) {
     id
     text
+  }
+}
+```
+
+<br/>
+
+### 17. Locking Down Queries Part I
+
+<br/>
+
+```
+query {
+  post(id:"ck6qohbqd002m0889je4aqzu2"){
+    id,
+    title,
+    body,
+    published
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(
+      id: "ck6qohbqd002m0889je4aqzu2",
+    data: {
+      published: false
+      }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+Only post author can find unpublished post
+
+<br/>
+
+```
+query{
+  me {
+    id,
+    name,
+    email
   }
 }
 ```
