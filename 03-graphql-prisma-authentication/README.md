@@ -804,6 +804,63 @@ Only owner email shows
 
 But some issue on delete id from the query.
 
+<br/>
+
+### 20. Fragments
+
+```
+query{
+  users {
+    ...userFields,
+    email
+  }
+}
+
+fragment userFields on User {
+  id,
+  name,
+  posts {
+    id
+  }
+}
+```
+
+<br/>
+
+After code changes works
+
+<br/>
+
+```
+query{
+  users {
+    email
+  }
+}
+
+```
+
+<br/>
+
+```
+query{
+  users {
+    id,
+    name,
+    posts {
+      id,
+      title,
+      published
+    }
+  }
+}
+```
+
+Only published posts shows
+
+<br/>
+<br/>
+
 ---
 
 **Marley**
