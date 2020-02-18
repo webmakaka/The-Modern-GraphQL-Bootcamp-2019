@@ -767,6 +767,25 @@ query{
 }
 ```
 
+<br/>
+
+### 18. Locking Down Queries Part II
+
+```
+query{
+  myPosts {
+    id,
+    title,
+    published,
+    body
+  }
+}
+```
+
+<br/>
+
+![Application](../img/pic-03-05.png?raw=true)
+
 ---
 
 **Marley**
