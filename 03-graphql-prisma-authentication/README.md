@@ -988,6 +988,25 @@ query{
 ```
 
 <br/>
+
+### 03. Pagination Using Cursors
+
+```
+query{
+  myPosts(first: 4, skip: 0, , after: "ck6qp80q9002y0889zdx4i08l") {
+    id,
+    title,
+    published,
+    body
+  }
+}
+```
+
+<br/>
+
+![Application](../img/pic-07-01.png?raw=true)
+
+<br/>
 <br/>
 
 ---
