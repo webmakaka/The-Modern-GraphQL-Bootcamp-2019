@@ -863,6 +863,54 @@ Only published posts shows
 ### 21. Cleaning up Some Edge Cases
 
 <br/>
+
+### 22. Locking Down Subscriptions
+
+```
+subscription {
+  myPost {
+    mutation
+    node {
+      id
+      title
+      body
+      author {
+        id
+        name
+      }
+    }
+  }
+}
+
+```
+
+<br/>
+
+```
+mutation {
+  updatePost(
+      id: "ck6qohbqd002m0889je4aqzu2",
+    data: {
+      published: false
+      }
+  ){
+    id,
+    title,
+    body,
+    published,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+<br/>
+
+![Application](../img/pic-03-06.png?raw=true)
+
+<br/>
 <br/>
 
 ---
