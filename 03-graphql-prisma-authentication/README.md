@@ -911,6 +911,10 @@ mutation {
 ![Application](../img/pic-03-06.png?raw=true)
 
 <br/>
+
+### 23. Token Expiration
+
+<br/>
 <br/>
 
 ---
