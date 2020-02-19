@@ -11,7 +11,10 @@ const Query = {
     });
   },
   users(parent, args, { prisma }, info) {
-    const opArgs = {};
+    const opArgs = {
+      first: args.first,
+      skip: args.skip
+    };
 
     if (args.query) {
       opArgs.where = {

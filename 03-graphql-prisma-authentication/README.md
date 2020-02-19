@@ -915,6 +915,59 @@ mutation {
 ### 23. Token Expiration
 
 <br/>
+
+### 24. Password Updates
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Sahar",
+      email: "sahar@example.com",
+      password: "password123"
+    }
+  ) {
+    user {
+      id,
+      name,
+      email
+    },
+    token
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  login(data: { email: "sahar@example.com", password: "password123" }) {
+    user {
+      id,
+      name
+    },
+    token
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  updateUser(
+    data: {
+      password: "password12345"
+    }
+  ){
+    id,
+    name,
+    email
+  }
+}
+```
+
+<br/>
 <br/>
 
 ---
