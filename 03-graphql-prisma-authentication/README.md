@@ -593,9 +593,9 @@ mutation {
 mutation {
   createPost(
     data: {
-      title: "Jess super Girl!",
+      title: "Jess super Girl  111!",
       body: "...",
-      published: true
+      published: false
       }
   ){
     id,
@@ -857,6 +857,10 @@ query{
 ```
 
 Only published posts shows
+
+<br/>
+
+### 21. Cleaning up Some Edge Cases
 
 <br/>
 <br/>
