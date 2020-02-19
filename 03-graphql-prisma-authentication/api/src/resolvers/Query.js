@@ -54,6 +54,8 @@ const Query = {
   },
   posts(parent, args, { prisma }, info) {
     const opArgs = {
+      first: args.first,
+      skip: args.skip,
       where: {
         published: true
       }

@@ -968,6 +968,26 @@ mutation {
 ```
 
 <br/>
+
+## 7. Pagination and Sorting with GraphQL
+
+<br/>
+
+### 02. Pagination
+
+```
+query{
+  users(
+    first: 2,
+    skip: 1
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
 <br/>
 
 ---
