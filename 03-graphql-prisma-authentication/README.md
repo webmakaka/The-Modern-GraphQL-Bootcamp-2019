@@ -1007,6 +1007,34 @@ query{
 ![Application](../img/pic-07-01.png?raw=true)
 
 <br/>
+
+### 04. Working with createdAt and updatedAt
+
+    $ prisma deploy
+    $ npm run get-schema
+
+<br/>
+
+```
+query{
+  users(
+    first: 2,
+    skip: 1
+  ) {
+    id,
+    name,
+    email,
+    createdAt,
+    updatedAt
+  }
+}
+```
+
+<br/>
+
+![Application](../img/pic-07-02.png?raw=true)
+
+<br/>
 <br/>
 
 ---
