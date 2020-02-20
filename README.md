@@ -6,6 +6,8 @@
 
 ### [GraphQL Prisma Authentication](./03-graphql-prisma-authentication/README.md)
 
+### [GraphQL Prisma Production Deployment](./04-graphql-prisma-production-deployment/README.md)
+
 ---
 
 **Marley**
