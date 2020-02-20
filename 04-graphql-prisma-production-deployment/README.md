@@ -14,13 +14,6 @@ prisma.io
 
 servers --> add new --> create a server
 
-create new database --> heroku --> create databse
-
-set up a server
-
-<br/>
-<br/>
-
 <br/>
 
 ![Application](../img/pic-08-01.png?raw=true)
@@ -28,6 +21,8 @@ set up a server
 <br/>
 
 ![Application](../img/pic-08-02.png?raw=true)
+
+create new database --> heroku --> create databse
 
 <br/>
 
@@ -39,7 +34,14 @@ set up a server
 
 <br/>
 
+set up a server
+
+<br/>
+
 ![Application](../img/pic-08-05.png?raw=true)
+
+<br/>
+<br/>
 
 <br/>
 
@@ -48,6 +50,34 @@ set up a server
 <br/>
 
 ![Application](../img/pic-08-07.png?raw=true)
+
+<br/>
+
+### 03. Prisma Configuration and Deployment
+
+    $ prisma deploy -e ../config/dev.env
+
+<br/>
+
+    $ prisma login
+
+Grant Persmission
+
+    $ prisma deploy -e ../config/prod.env
+
+<br/>
+
+```
+? Set up a new Prisma server or deploy to an existing server? marley/the-modern-
+graphql-bootcamp
+? Choose a name for your service the-modern-graphql-bootcamp
+? Choose a name for your stage prod
+
+```
+
+<br/>
+
+![Application](../img/pic-08-08.png?raw=true)
 
 ---
 
