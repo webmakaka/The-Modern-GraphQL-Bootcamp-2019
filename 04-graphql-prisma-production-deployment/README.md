@@ -79,6 +79,34 @@ graphql-bootcamp
 
 ![Application](../img/pic-08-08.png?raw=true)
 
+<br/>
+
+### 04. Exploring the Production Prisma Instance
+
+<br/>
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Andrey Mead",
+      email: "andrew@example.com",
+      password: "password123"
+    }
+  ) {
+    id,
+    name
+  }
+}
+```
+
+<br/>
+
+![Application](../img/pic-08-08.png?raw=true)
+
+<br/>
+<br/>
+
 ---
 
 **Marley**
