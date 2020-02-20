@@ -1035,6 +1035,60 @@ query{
 ![Application](../img/pic-07-02.png?raw=true)
 
 <br/>
+
+### 05. Sorting Data
+
+https://github.com/ardatan/graphql-import
+
+<br/>
+
+```
+query{
+  users(
+    orderBy:name_ASC
+  ) {
+    id,
+    name,
+    email,
+    createdAt,
+    updatedAt
+  }
+}
+```
+
+<br/>
+
+![Application](../img/pic-07-03.png?raw=true)
+
+<br/>
+
+```
+query{
+  myPosts(orderBy: title_ASC) {
+    id,
+    title,
+    published,
+    body
+  }
+}
+```
+
+<br/>
+
+```
+query{
+  comments(orderBy: text_ASC){
+    id,
+    text,
+    author {
+      id,
+      name
+    }
+  }
+}
+```
+
+<br/>
 <br/>
 
 ---
