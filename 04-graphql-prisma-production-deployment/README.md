@@ -105,6 +105,16 @@ mutation {
 ![Application](../img/pic-08-08.png?raw=true)
 
 <br/>
+
+### 05. Node.js Production App Deployment Part I
+
+    $ npm install -g heroku
+    $ npm install --save env-cmd
+    $ npm run dev
+
+    
+
+<br/>
 <br/>
 
 ---
