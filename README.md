@@ -8,6 +8,8 @@
 
 ### [GraphQL Prisma Production Deployment](./04-graphql-prisma-production-deployment/README.md)
 
+### [Apollo Client and Testing GraphQL](./05-apollo-client/README.md)
+
 ---
 
 **Marley**
