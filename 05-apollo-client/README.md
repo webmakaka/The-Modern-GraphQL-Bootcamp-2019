@@ -10,6 +10,11 @@
 
 ### 02. Setting up a Test Environment
 
+    $ cd prisma
+    $ prisma deploy -e ../config/test.env
+
+http://localhost:4466/default/test
+
 <br/>
 <br/>
 
