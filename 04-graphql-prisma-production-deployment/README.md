@@ -138,6 +138,27 @@ mutation {
 ![Application](../img/pic-08-10.png?raw=true)
 
 <br/>
+
+### 07. Node.js Production Environment Variables
+
+    $ heroku config:set PRISMA_SECRET=MyProdSuperSecret1234
+    $ heroku config:set JWT_SECRET=MyProdJWTSuperSecret1234
+
+    $ heroku config
+
+**Dev**
+
+    $ cd prisma
+    $ prisma deploy -e ../config/dev.env
+
+**Prod**
+
+    $ git push heroku master
+
+    $ cd prisma
+    $ prisma deploy -e ../config/prod.env
+
+<br/>
 <br/>
 
 ---

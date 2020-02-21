@@ -5,7 +5,7 @@ export const generateToken = userId => {
     {
       userId
     },
-    'this_is_a_secret',
+    process.env.JWT_SECRET,
     { expiresIn: '14 days' }
   );
 };

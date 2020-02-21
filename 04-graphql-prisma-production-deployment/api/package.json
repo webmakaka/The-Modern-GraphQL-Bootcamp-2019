@@ -8,7 +8,7 @@
     "start-prev": "env-cmd -f ./config/prod.env node dist/index.js",
     "heroku-postbuild": "babel src --out-dir dist --copy-files",
     "dev": "env-cmd -f ./config/dev.env nodemon --exec babel-node src/index.js --ext js,graphql",
-    "get-schema": "graphql get-schema -p prisma"
+    "get-schema": "graphql get-schema -p prisma --dotenv config/dev.env"
   },
   "keywords": [],
   "author": "",
