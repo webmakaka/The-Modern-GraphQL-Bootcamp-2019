@@ -112,7 +112,30 @@ mutation {
     $ npm install --save env-cmd
     $ npm run dev
 
-    
+<br/>
+
+### 06. Node.js Production App Deployment Part II
+
+    $ npm install --save @babel/polyfill
+
+    $ npm run heroku-postbuild
+    $ npm run start-prev
+    $ ^C
+
+<br/>
+
+    $ git init
+    $ git add .
+    $ git commit -m "Initial commit"
+    $ heroku login
+    $ heroku create
+    $ heroku config:set PRISMA_ENDPOINT=https://whispering-journey-12002.herokuapp.com/the-modern-graphql-bootcamp/prod
+    $ git remote -v
+    $ git push heroku master
+
+<br/>
+
+![Application](../img/pic-08-10.png?raw=true)
 
 <br/>
 <br/>
