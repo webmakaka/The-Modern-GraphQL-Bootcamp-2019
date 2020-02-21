@@ -16,6 +16,15 @@
 http://localhost:4466/default/test
 
 <br/>
+
+### 03 Installing and Exploring Jest
+
+https://jestjs.io/
+
+    $ npm install --save-dev jest
+    $ npm run test
+
+<br/>
 <br/>
 
 ---
