@@ -11,5 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "graphql": "^14.6.0"
   }
 }

@@ -36,6 +36,11 @@ No project sensitive examples
 
 https://parceljs.org/
 
+    $ cd 05-apollo-client/api/
+    $ npm run dev
+
+<br/>
+
     $ cd 05-apollo-client/apollo/
     $ npm init -y
     $ npm install --save-dev parcel-bundler
@@ -43,6 +48,107 @@ https://parceljs.org/
 <br/>
 
     $ npm run start
+
+<br/>
+
+### 06. Apollo Client in the Browser Part II
+
+<br/>
+
+Recreated database again!
+
+<br/>
+
+```
+mutation {
+  createUser(
+    data: {
+      name: "Marley",
+      email: "malrey@example.com",
+      password: "password123"
+    }
+  ) {
+    user {
+      id,
+      name,
+      email
+    },
+    token
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  login(data: { email: "malrey@example.com", password: "password123" }) {
+    user {
+      id,
+      name
+    },
+    token
+  }
+}
+
+```
+
+<br/>
+
+```
+query{
+  me {
+    id,
+    name,
+    email
+  }
+}
+```
+
+<br/>
+
+```
+query{
+  me {
+    id,
+    name,
+    email
+  }
+}
+```
+
+<br/>
+
+```
+mutation {
+  createPost(
+    data: {
+      title: "This course is awesome",
+      body: "It is true!!!",
+      published: true
+    }
+  ){
+    id,
+    title,
+    body,
+    published
+  }
+}
+```
+
+<br/>
+
+https://www.apollographql.com/
+
+    $ cd 05-apollo-client/apollo/
+    $ npm install --save apollo-boost graphql
+
+    $ cd ../01-graphql-basics/
+    $ npm run start
+
+<br/>
+
+![Application](../img/pic-09-01.png?raw=true)
 
 <br/>
 <br/>
