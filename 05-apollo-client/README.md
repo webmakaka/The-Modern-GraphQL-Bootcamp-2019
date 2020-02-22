@@ -151,6 +151,21 @@ https://www.apollographql.com/
 ![Application](../img/pic-09-01.png?raw=true)
 
 <br/>
+
+### 07. Configuring Jest to Start the GraphQL Server
+
+https://jestjs.io/docs/en/configuration
+
+<br/>
+
+    $ cd 05-apollo-client/api$
+    $ npm install --save-dev babel-register
+
+<br/>
+
+    $ npm run test
+
+<br/>
 <br/>
 
 ---
