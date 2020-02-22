@@ -25,6 +25,26 @@ https://jestjs.io/
     $ npm run test
 
 <br/>
+
+### 04. Testing and Assertions
+
+No project sensitive examples
+
+<br/>
+
+### 05. Apollo Client in the Browser Part I
+
+https://parceljs.org/
+
+    $ cd 05-apollo-client/apollo/
+    $ npm init -y
+    $ npm install --save-dev parcel-bundler
+
+<br/>
+
+    $ npm run start
+
+<br/>
 <br/>
 
 ---
