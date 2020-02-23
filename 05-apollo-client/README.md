@@ -143,7 +143,6 @@ https://www.apollographql.com/
     $ cd 05-apollo-client/apollo/
     $ npm install --save apollo-boost graphql
 
-    $ cd ../01-graphql-basics/
     $ npm run start
 
 <br/>
@@ -164,7 +163,7 @@ use
 
 <br/>
 
-    $ cd 05-apollo-client/api$
+    $ cd 05-apollo-client/api
     $ npm install --save-dev babel-register
 
 <br/>
@@ -174,6 +173,38 @@ use
 <br/>
 
 ![Application](../img/pic-09-02.png?raw=true)
+
+<br/>
+
+### 08. Testing Mutations
+
+    $ docker-compose stop
+    $ docker-compose rm
+
+<br/>
+Recreate db on heroku
+<br/>
+
+    $ docker-compose up -d
+
+<br/>
+
+    $ cd ../api
+    $ npm install --save apollo-boost graphql cross-fetch
+
+<br/>
+
+    $ cd api/prisma
+    $ prisma deploy -e ../config/test.env
+
+<br/>
+
+    $ cd ../
+    $ npm run test
+
+<br/>
+
+![Application](../img/pic-09-03.png?raw=true)
 
 <br/>
 <br/>
