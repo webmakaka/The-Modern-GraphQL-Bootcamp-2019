@@ -9,7 +9,7 @@
     "heroku-postbuild": "babel src --out-dir dist --copy-files",
     "dev": "env-cmd -f ./config/dev.env nodemon --exec babel-node src/index.js --ext js,graphql",
     "get-schema": "graphql get-schema -p prisma --dotenv config/dev.env",
-    "test": "env-cmd -f ./config/test.env jest --watch"
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
   },
   "jest": {
     "globalSetup": "./tests/jest/globalSetup.js",

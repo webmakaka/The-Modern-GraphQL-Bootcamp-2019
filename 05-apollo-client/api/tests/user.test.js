@@ -1,52 +1,12 @@
 import 'cross-fetch/polyfill'
-import ApolloBoost, { gql } from 'apollo-boost'
-import bcrypt from 'bcryptjs'
+import { gql } from 'apollo-boost'
 import prisma from '../src/prisma';
-import { getUserId } from '../src/utils/getUserId';
+import seeDatabase from './utils/seedDatabase';
+import getClient from './utils/getClient';
 
-const client = new ApolloBoost({
-    uri: 'http://localhost:4000'
-})
+const client = getClient();
 
-beforeEach( async () => {
-
-    await prisma.mutation.deleteManyPosts()
-
-    await prisma.mutation.deleteManyUsers()
-    const user =  await prisma.mutation.createUser({
-        data: {
-            name: 'Jen',
-            email: 'jen@example.com',
-            password: bcrypt.hashSync('Red098!@#$')
-        }
-    })
-
-    await prisma.mutation.createPost({
-        data: {
-            title: 'My Published Post',
-            body: 'My Published Post Body',
-            published: true,
-            author: {
-                connect: {
-                    id: user.id
-                }
-            }
-        }
-    })
-
-    await prisma.mutation.createPost({
-        data: {
-            title: 'My Draft Post',
-            body: 'My Draft Post Body',
-            published: false,
-            author: {
-                connect: {
-                    id: user.id
-                }
-            }
-        }
-    })
-})
+beforeEach(seeDatabase)
 
 
 test('Should create a new user', async () => {
@@ -94,23 +54,7 @@ test('Should expose public author profiles', async () => {
     expect(response.data.users[0].name).toBe('Jen')
 })
 
-test('Should expose published posts', async () => {
-    const getPosts = gql`
-        query {
-            posts {
-                id,
-                title,
-                body,
-                published
-            }
-        }
-    `;
 
-    const response = await client.query({ query: getPosts});
-
-    expect(response.data.posts.length).toBe(1);
-    expect(response.data.posts[0].published).toBe(true)
-});
 
 test('Should not login with bad credentials', async () => {
 

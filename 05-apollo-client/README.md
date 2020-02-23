@@ -219,6 +219,10 @@ Recreate db on heroku
 ### 11. Expecting GraphQL Operations to Fail
 
 <br/>
+
+### 12. Supporting Multiple Test Suites and Authentication
+
+<br/>
 <br/>
 
 ---
