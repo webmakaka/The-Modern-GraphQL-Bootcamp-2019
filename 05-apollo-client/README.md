@@ -215,6 +215,10 @@ Recreate db on heroku
 ### 10. Testing Queries
 
 <br/>
+
+### 11. Expecting GraphQL Operations to Fail
+
+<br/>
 <br/>
 
 ---
