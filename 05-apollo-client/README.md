@@ -211,6 +211,10 @@ Recreate db on heroku
 ### 09. Seeding the Database with Test Data
 
 <br/>
+
+### 10. Testing Queries
+
+<br/>
 <br/>
 
 ---
