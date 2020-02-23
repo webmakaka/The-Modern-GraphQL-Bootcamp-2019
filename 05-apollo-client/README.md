@@ -158,12 +158,22 @@ https://jestjs.io/docs/en/configuration
 
 <br/>
 
+use
+
+"jest": "^23.6.0"
+
+<br/>
+
     $ cd 05-apollo-client/api$
     $ npm install --save-dev babel-register
 
 <br/>
 
     $ npm run test
+
+<br/>
+
+![Application](../img/pic-09-02.png?raw=true)
 
 <br/>
 <br/>
