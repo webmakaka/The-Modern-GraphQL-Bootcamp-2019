@@ -207,6 +207,10 @@ Recreate db on heroku
 ![Application](../img/pic-09-03.png?raw=true)
 
 <br/>
+
+### 09. Seeding the Database with Test Data
+
+<br/>
 <br/>
 
 ---
