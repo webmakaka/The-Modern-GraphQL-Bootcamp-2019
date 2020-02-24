@@ -227,6 +227,10 @@ Recreate db on heroku
 ### 13. Testing with Authentication Part I
 
 <br/>
+
+### 14. Testing with Authentication Part II
+
+<br/>
 <br/>
 
 ---
