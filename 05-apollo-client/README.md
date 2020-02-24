@@ -231,6 +231,14 @@ Recreate db on heroku
 ### 14. Testing with Authentication Part II
 
 <br/>
+
+### 15. GraphQL Variables Part I
+
+<br/>
+
+### 16. GraphQL Variables Part II
+
+<br/>
 <br/>
 
 ---
