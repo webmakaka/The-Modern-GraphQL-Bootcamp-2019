@@ -223,6 +223,10 @@ Recreate db on heroku
 ### 12. Supporting Multiple Test Suites and Authentication
 
 <br/>
+
+### 13. Testing with Authentication Part I
+
+<br/>
 <br/>
 
 ---
