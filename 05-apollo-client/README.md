@@ -243,6 +243,20 @@ Recreate db on heroku
 ### 17. Testing Comments
 
 <br/>
+
+### 18. Testing Subscriptions
+
+https://links.mead.io/getclient
+
+https://gist.github.com/andrewjmead/acdd7bc29d853f8d7a8962d6a1d9ae5a
+
+    $ npm install --save apollo-client@2.4.2 apollo-cache-inmemory@1.2.10 apollo-link-http@1.5.5 apollo-link-error@1.1.1 apollo-link@1.2.3 apollo-link-ws@1.0.9 apollo-utilities@1.0.21 subscriptions-transport-ws@0.9.15 @babel/polyfill@7.0.0 graphql@0.13.2
+
+<br/>
+
+![Application](../img/pic-09-04.png?raw=true)
+
+<br/>
 <br/>
 
 ---
