@@ -257,6 +257,14 @@ https://gist.github.com/andrewjmead/acdd7bc29d853f8d7a8962d6a1d9ae5a
 ![Application](../img/pic-09-04.png?raw=true)
 
 <br/>
+
+### 19. Test Case Ideas
+
+https://links.mead.io/testideas
+
+https://gist.github.com/andrewjmead/b1a4ad4cba8623b9b06fbdd5a8e4fdb8
+
+<br/>
 <br/>
 
 ---
