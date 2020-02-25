@@ -10,6 +10,8 @@
 
 ### [Apollo Client and Testing GraphQL](./05-apollo-client/README.md)
 
+### [Creating a Boilerplate Project](./06-grahql-prisma-boilerplate/README.md)
+
 ---
 
 **Marley**
