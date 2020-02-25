@@ -239,6 +239,10 @@ Recreate db on heroku
 ### 16. GraphQL Variables Part II
 
 <br/>
+
+### 17. Testing Comments
+
+<br/>
 <br/>
 
 ---
