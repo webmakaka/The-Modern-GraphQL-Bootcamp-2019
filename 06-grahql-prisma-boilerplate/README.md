@@ -11,6 +11,58 @@
 ### 02. Creating a Boilerplate Project
 
 <br/>
+
+### 03. Using the Boilerplate Project
+
+    $ cd api/prisma/
+    $ prisma deploy -e ../config/dev.env
+    $ prisma deploy -e ../config/test.env
+
+<br/>
+
+    $ cd ../
+    $ npm install
+
+<br/>
+
+    $ npm run get-schema
+
+<br/>
+
+    $ npm run test
+    ~C
+
+<br/>
+
+    $ npm run dev
+
+<br/>
+
+http://localhost:4000/
+
+<br/>
+
+**prod**
+
+    $ cd api/prisma/
+    $ prisma deploy -e ../config/prod.env
+
+<br/>
+
+    $ cd ../
+    $ heroku create
+    $ heroku config:set PRISMA_ENDPOINT=https://whispering-journey-12002.herokuapp.com/the-modern-graphql-bootcamp/food/prod PRISMA_SECRET=MyProdSuperSecret1234 JWT_SECRET=MyProdJWTSuperSecret1234
+
+<br/>
+
+    $ heroku config
+    $ git commit -am "Setup food project"
+
+<br/>
+
+    $ git push heroku master
+
+<br/>
 <br/>
 
 ---

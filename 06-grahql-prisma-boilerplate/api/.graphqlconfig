@@ -5,7 +5,7 @@
       "extensions": {
         "prisma": "prisma/prisma.yml",
         "endpoints": {
-          "default": "http://localhost:4466"
+          "default": "http://localhost:4466/food/dev"
         }
       }
     }
