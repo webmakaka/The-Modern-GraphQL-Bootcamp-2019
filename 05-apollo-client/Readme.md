@@ -264,14 +264,13 @@ https://links.mead.io/testideas
 
 https://gist.github.com/andrewjmead/b1a4ad4cba8623b9b06fbdd5a8e4fdb8
 
-<br/>
-<br/>
+<br/><br/>
 
 ---
 
+<br/>
+
 **Marley**
 
-<a href="https://jsdev.org">jsdev.org</a>
-
-Any questions on eng: <a href="https://jsdev.org/chat/">Telegram or Slack</a>  
-Любые вопросы на русском: <a href="https://jsdev.ru/chat/">Telegram or Slack</a>
+Any questions in english: <a href="https://jsdev.org/chat/">Telegram Chat</a>  
+Любые вопросы на русском: <a href="https://jsdev.ru/chat/">Телеграм чат</a>
