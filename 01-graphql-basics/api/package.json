@@ -14,6 +14,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "graphql-yoga": "^1.18.3",
-    "uuid": "^3.3.3"
+    "uuid": "^8.3.2"
   }
 }

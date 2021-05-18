@@ -4,7 +4,7 @@ const Query = {
       return db.USERS;
     }
 
-    return db.USERS.filter(user => {
+    return db.USERS.filter((user) => {
       return user.name.toLowerCase().includes(args.query.toLowerCase());
     });
   },
@@ -12,7 +12,7 @@ const Query = {
     if (!args.query) {
       return db.POSTS;
     }
-    return db.POSTS.filter(post => {
+    return db.POSTS.filter((post) => {
       const isTitleMatch = post.title
         .toLowerCase()
         .includes(args.query.toLowerCase());
@@ -32,7 +32,7 @@ const Query = {
       id: '123098',
       name: 'Mike',
       email: 'mike@example.com',
-      age: 28
+      age: 28,
     };
   },
   post() {
@@ -40,9 +40,9 @@ const Query = {
       id: '092',
       title: 'GraphQL 101',
       body: '',
-      published: false
+      published: false,
     };
-  }
+  },
 };
 
 export { Query as default };
