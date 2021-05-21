@@ -1,4 +1,4 @@
-const Query = {
+export const Query = {
   users(parent, args, { db }, info) {
     if (!args.query) {
       return db.USERS;
@@ -44,5 +44,3 @@ const Query = {
     };
   },
 };
-
-export { Query as default };

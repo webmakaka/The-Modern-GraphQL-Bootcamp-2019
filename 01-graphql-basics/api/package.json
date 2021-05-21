@@ -3,17 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js --ext js,graphql"
+    "start": "nodemon src/index.js --ext js,json,graphql"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "graphql-yoga": "^1.18.3",
+    "apollo-server-express": "^2.24.1",
+    "express": "^4.17.1",
     "uuid": "^8.3.2"
   }
 }

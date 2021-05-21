@@ -1,4 +1,4 @@
-const Comment = {
+export const Comment = {
   author(parent, args, { db }, info) {
     return db.USERS.find((user) => {
       return user.id === parent.author;
@@ -10,5 +10,3 @@ const Comment = {
     });
   },
 };
-
-export { Comment as default };

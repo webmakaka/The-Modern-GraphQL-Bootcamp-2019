@@ -1,4 +1,4 @@
-const Subscription = {
+export const Subscription = {
   comment: {
     subscribe(parent, { postId }, { db, pubsub }, info) {
       const post = db.POSTS.find(
@@ -18,5 +18,3 @@ const Subscription = {
     },
   },
 };
-
-export { Subscription as default };

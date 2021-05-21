@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-const Mutation = {
+export const Mutation = {
   createUser(parent, args, { db }, info) {
     const emailTaken = db.USERS.some((user) => user.email === args.data.email);
 
@@ -233,5 +233,3 @@ const Mutation = {
     return comment;
   },
 };
-
-export { Mutation as default };

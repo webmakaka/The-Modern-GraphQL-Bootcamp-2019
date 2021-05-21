@@ -1,4 +1,4 @@
-const Post = {
+export const Post = {
   author(parent, args, { db }, info) {
     return db.USERS.find((user) => {
       return user.id === parent.author;
@@ -10,5 +10,3 @@ const Post = {
     });
   },
 };
-
-export { Post as default };
