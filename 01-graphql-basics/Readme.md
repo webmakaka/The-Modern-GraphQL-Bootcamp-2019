@@ -4,8 +4,14 @@
 
 <br/>
 
+    $ npm install -g nodemon
+
+<br/>
+
     $ npm install
     $ npm run start
+
+<br/>
 
 http://localhost:4000/graphql
 
