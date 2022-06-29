@@ -4,10 +4,6 @@
 
 <br/>
 
-    $ npm install -g nodemon
-
-<br/>
-
     $ npm install
     $ npm run start
 
